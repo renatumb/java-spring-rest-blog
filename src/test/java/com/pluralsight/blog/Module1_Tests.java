@@ -63,7 +63,7 @@ public class Module1_Tests {
             //e.printStackTrace();
         }
     }
-    
+
     @Test
     public void task_1() {
         Class c = PostRepository.class;
