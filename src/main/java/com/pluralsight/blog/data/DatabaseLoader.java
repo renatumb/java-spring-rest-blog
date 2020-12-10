@@ -34,10 +34,10 @@ public class DatabaseLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
 
         this.authors.addAll(Arrays.asList(
-                new Author("sholderness", "Sarah",  "Holderness", "password"),
-                new Author("tbell", "Tom",  "Bell", "password"),
-                new Author("efisher", "Eric",  "Fisher", "password"),
-                new Author("csouza", "Carlos",  "Souza", "password")
+                new Author("sholderness", "Sarah", "Holderness", "password"),
+                new Author("tbell", "Tom", "Bell", "password"),
+                new Author("efisher", "Eric", "Fisher", "password"),
+                new Author("csouza", "Carlos", "Souza", "password")
         ));
         this.authorRepository.saveAll(this.authors);
 
@@ -47,6 +47,7 @@ public class DatabaseLoader implements ApplicationRunner {
 
             String title = String.format(template, gadget);
             Post post = new Post(title, "Lorem ipsum dolor sit amet, consectetur adipiscing elit… ");
+            post.setAuthor(authors.get(i % authors.size()));
             randomPosts.add(post);
         });
 
